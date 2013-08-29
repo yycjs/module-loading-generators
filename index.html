@@ -659,13 +659,28 @@
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h2>ECMAScript 6 modules</h2></header>
             
             
-            <section><p>E</p></section>
+            <section><p>The next version of <a href="http://wiki.ecmascript.org/doku.php?id=harmony:modules">ECMAScript</a> (Specification for JavaScript)
+will support loading modules:</p>
+<div class="highlight"><pre><span class="c1">// say_hi.js</span>
+<span class="kd">var</span> <span class="nx">privateVariable</span> <span class="o">=</span> <span class="s1">&#39;Hello &#39;</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="kd">function</span> <span class="nx">sayHi</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">privateVariable</span> <span class="o">+</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// module.js</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">sayHi</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./say_hi&#39;</span><span class="p">;</span>
+
+<span class="nx">sayHi</span><span class="p">(</span><span class="s1">&#39;David&#39;</span><span class="p">);</span>
+</pre></div>
+
+<p>This is still under heavy discussion.</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -722,8 +737,13 @@
         <div class="slide">
           <div class="inner">
             
-            <header><h2>Yeoman</h2></header>
+            <header><h2><a href="http://yeoman.io/">Yeoman</a></h2></header>
             
+            
+            <section><h3>Modern workflows for modern web app</h3>
+<p><img alt="Yeoman Logo" src="images/yeoman-logo.png" /></p>
+<p><a href="learningyeoman-8881.onmodulus.net">learningyeoman-8881.onmodulus.net</a></p>
+<p>Brought to you by <a href="http://seangoresht.com/">Sean Goresht</a></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -751,8 +771,12 @@
         <div class="slide">
           <div class="inner">
             
-            <header><h2>Mimosa</h2></header>
+            <header><h2><a href="http://mimosa.io/">Mimosa</a></h2></header>
             
+            
+            <section><h3>A modern browser development toolkit</h3>
+<p><img alt="Mimosa Logo" src="images/mimosa-hat.png" /></p>
+<p>Brought to you by <a href="https://github.com/thorinside">Neal Sanche</a></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -780,10 +804,25 @@
         <div class="slide">
           <div class="inner">
             
-            <header><h2>Next Month</h2></header>
+            <header><h2><a href="http://www.meetup.com/YYC-js/events/131079442/">Next Month</a></h2></header>
             
             
-            <section><h3>SEO &amp; i18n</h3></section>
+            <section><ul>
+<li>SEO<ul>
+<li>What is it?</li>
+<li>Protips &amp; tools</li>
+<li>Tricks to improve SEO</li>
+<li>SEO techniques for JS apps</li>
+</ul>
+</li>
+<li>i18n<ul>
+<li>Why is it called i18n, why does it matter?</li>
+<li>Libs &amp; tools you can use</li>
+<li>Client side vs. server side localization</li>
+<li>Crowd sourcing i18n</li>
+</ul>
+</li>
+</ul></section>
             
           </div>
           <div class="presenter_notes">
@@ -907,17 +946,17 @@
       
         
         <tr id="toc-row-18" class="sub">
-          <th><a href="#slide18">Yeoman</a></th>
+          <th><a href="#slide18"><a href="http://yeoman.io/">Yeoman</a></a></th>
           <td><a href="#slide18">18</a></td>
         </tr>
         
         <tr id="toc-row-19" class="sub">
-          <th><a href="#slide19">Mimosa</a></th>
+          <th><a href="#slide19"><a href="http://mimosa.io/">Mimosa</a></a></th>
           <td><a href="#slide19">19</a></td>
         </tr>
         
         <tr id="toc-row-20" class="sub">
-          <th><a href="#slide20">Next Month</a></th>
+          <th><a href="#slide20"><a href="http://www.meetup.com/YYC-js/events/131079442/">Next Month</a></a></th>
           <td><a href="#slide20">20</a></td>
         </tr>
         

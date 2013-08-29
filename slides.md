@@ -224,7 +224,23 @@ O
 
 ## ECMAScript 6 modules
 
-E
+The next version of [ECMAScript](http://wiki.ecmascript.org/doku.php?id=harmony:modules) (Specification for JavaScript)
+will support loading modules:
+
+    !javascript
+    // say_hi.js
+    var privateVariable = 'Hello ';
+
+    export function sayHi(name) {
+      return privateVariable + name;
+    }
+
+    // module.js
+    import { sayHi } from './say_hi';
+
+    sayHi('David');
+
+This is still under heavy discussion.
 
 ---
 
@@ -232,14 +248,38 @@ E
 
 ---
 
-## Yeoman
+## [Yeoman](http://yeoman.io/)
+
+### Modern workflows for modern web app
+
+![Yeoman Logo](images/yeoman-logo.png)
+
+[learningyeoman-8881.onmodulus.net](learningyeoman-8881.onmodulus.net)
+
+Brought to you by [Sean Goresht](http://seangoresht.com/)
+
 
 ---
 
-## Mimosa
+## [Mimosa](http://mimosa.io/)
+
+### A modern browser development toolkit
+
+![Mimosa Logo](images/mimosa-hat.png)
+
+Brought to you by [Neal Sanche](https://github.com/thorinside)
 
 ---
 
-## Next Month
+## [Next Month](http://www.meetup.com/YYC-js/events/131079442/)
 
-### SEO & i18n
+- SEO
+    - What is it?
+    - Protips & tools
+    - Tricks to improve SEO
+    - SEO techniques for JS apps
+- i18n
+    - Why is it called i18n, why does it matter?
+    - Libs & tools you can use
+    - Client side vs. server side localization
+    - Crowd sourcing i18n
