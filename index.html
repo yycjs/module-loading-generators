@@ -537,14 +537,14 @@
 <span class="nt">&lt;/html&gt;</span>
 </pre></div>
 
-<p><em>scripts/main.js</em></p>
-<div class="highlight"><pre><span class="nx">require</span><span class="p">([</span><span class="s2">&quot;helper/util&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">util</span><span class="p">)</span> <span class="p">{</span>
+<p>Modules:</p>
+<div class="highlight"><pre><span class="c1">// scripts/main.js</span>
+<span class="nx">require</span><span class="p">([</span><span class="s2">&quot;helper/util&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">util</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">util</span><span class="p">.</span><span class="nx">test</span> <span class="c1">// -&gt; I am a util</span>
 <span class="p">});</span>
-</pre></div>
 
-<p><em>scripts/helper/util.js</em></p>
-<div class="highlight"><pre><span class="nx">define</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="c1">// scripts/helper/util.js</span>
+<span class="nx">define</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">{</span> <span class="nx">test</span><span class="o">:</span> <span class="s1">&#39;I am a util&#39;</span> <span class="p">};</span>
 <span class="p">});</span>
 </pre></div>

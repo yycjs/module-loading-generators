@@ -187,16 +187,15 @@ A JavaScript AMD module loader.
         </body>
     </html>
 
-*scripts/main.js*
+Modules:
 
     !javascript
+    // scripts/main.js
     require(["helper/util"], function(util) {
       util.test // -> I am a util
     });
 
-*scripts/helper/util.js*
-
-    !javascript
+    // scripts/helper/util.js
     define(function() {
       return { test: 'I am a util' };
     });
