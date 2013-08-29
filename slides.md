@@ -18,7 +18,7 @@
 
 ---
 
-## Our Resident Presenters
+## Our Residents
 
 ## David Luecke
 
@@ -72,26 +72,28 @@
 
 ## Scope in JavaScript
 
-__JavaScript only knows function scope__
+__Global vs local__
 
-	!javascript
-	for(var i = 0; i < 10; i++) {
-		var x = 'testing';
+    !javascript
+    function test() {
+      var local = 42;
+      global = 'global';
+    }
 
-		(function(arg) {
-			var y = 42;
-		})(i);
-	}
+    test();
 
-__Global variables__
+__JavaScript only knows function and global scope__
 
-	!javascript
-	function test() {
-		var local = 42;
-		global = 'global';
-	}
+    !javascript
+    for(var i = 0; i < 10; i++) {
+      var x = 'testing';
 
-	test();
+      (function(arg) {
+        var y = arg + 1;
+      })(i);
+
+      y // -> undefined
+    }
 
 ---
 
@@ -139,7 +141,7 @@ __Global variables__
 
 ## __A__synchronous __M__odule __D__efinition
 
-__AMD__: [CommonJS](http://www.commonjs.org/) specification for
+__AMD__: Specification for
 [asynchronously loading dependencies](https://github.com/amdjs/amdjs-api/wiki/AMD).
 
 	!javascript
@@ -169,9 +171,35 @@ __AMD__: [CommonJS](http://www.commonjs.org/) specification for
 
 ---
 
-## RequireJS
+## [RequireJS](http://requirejs.org/)
 
-D
+A JavaScript AMD module loader.
+
+    !html
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>My Sample Project</title>
+            <script data-main="scripts/main" src="scripts/require.js"></script>
+        </head>
+        <body>
+            <h1>My Sample Project</h1>
+        </body>
+    </html>
+
+*scripts/main.js*
+
+    !javascript
+    require(["helper/util"], function(util) {
+      util.test // -> I am a util
+    });
+
+*scripts/helper/util.js*
+
+    !javascript
+    define(function() {
+      return { test: 'I am a util' };
+    });
 
 ---
 

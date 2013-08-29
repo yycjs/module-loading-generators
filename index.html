@@ -142,7 +142,7 @@
         <div class="slide">
           <div class="inner">
             
-            <header><h2>Our Resident Presenters</h2></header>
+            <header><h2>Our Residents</h2></header>
             
             
             <section><h2>David Luecke</h2>
@@ -322,23 +322,25 @@
             <header><h2>Scope in JavaScript</h2></header>
             
             
-            <section><p><strong>JavaScript only knows function scope</strong></p>
-<div class="highlight"><pre><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="s1">&#39;testing&#39;</span><span class="p">;</span>
-
-    <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
-    <span class="p">})(</span><span class="nx">i</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-
-<p><strong>Global variables</strong></p>
+            <section><p><strong>Global vs local</strong></p>
 <div class="highlight"><pre><span class="kd">function</span> <span class="nx">test</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">local</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
-    <span class="nx">global</span> <span class="o">=</span> <span class="s1">&#39;global&#39;</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">local</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+  <span class="nx">global</span> <span class="o">=</span> <span class="s1">&#39;global&#39;</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nx">test</span><span class="p">();</span>
+</pre></div>
+
+<p><strong>JavaScript only knows function and global scope</strong></p>
+<div class="highlight"><pre><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="s1">&#39;testing&#39;</span><span class="p">;</span>
+
+  <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">arg</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">})(</span><span class="nx">i</span><span class="p">);</span>
+
+  <span class="nx">y</span> <span class="c1">// -&gt; undefined</span>
+<span class="p">}</span>
 </pre></div>
 </section>
             
@@ -465,7 +467,7 @@
             <header><h2><strong>A</strong>synchronous <strong>M</strong>odule <strong>D</strong>efinition</h2></header>
             
             
-            <section><p><strong>AMD</strong>: <a href="http://www.commonjs.org/">CommonJS</a> specification for
+            <section><p><strong>AMD</strong>: Specification for
 <a href="https://github.com/amdjs/amdjs-api/wiki/AMD">asynchronously loading dependencies</a>.</p>
 <div class="highlight"><pre><span class="c1">// say_hi.js</span>
 <span class="nx">define</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -516,13 +518,37 @@
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>RequireJS</h2></header>
+            <header><h2><a href="http://requirejs.org/">RequireJS</a></h2></header>
             
             
-            <section><p>D</p></section>
+            <section><p>A JavaScript AMD module loader.</p>
+<div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>My Sample Project<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">data-main=</span><span class="s">&quot;scripts/main&quot;</span> <span class="na">src=</span><span class="s">&quot;scripts/require.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;h1&gt;</span>My Sample Project<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+<p><em>scripts/main.js</em></p>
+<div class="highlight"><pre><span class="nx">require</span><span class="p">([</span><span class="s2">&quot;helper/util&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">util</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">util</span><span class="p">.</span><span class="nx">test</span> <span class="c1">// -&gt; I am a util</span>
+<span class="p">});</span>
+</pre></div>
+
+<p><em>scripts/helper/util.js</em></p>
+<div class="highlight"><pre><span class="nx">define</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span> <span class="nx">test</span><span class="o">:</span> <span class="s1">&#39;I am a util&#39;</span> <span class="p">};</span>
+<span class="p">});</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -808,7 +834,7 @@
         </tr>
         
         <tr id="toc-row-3" class="sub">
-          <th><a href="#slide3">Our Resident Presenters</a></th>
+          <th><a href="#slide3">Our Residents</a></th>
           <td><a href="#slide3">3</a></td>
         </tr>
         
@@ -856,7 +882,7 @@
         </tr>
         
         <tr id="toc-row-12" class="sub">
-          <th><a href="#slide12">RequireJS</a></th>
+          <th><a href="#slide12"><a href="http://requirejs.org/">RequireJS</a></a></th>
           <td><a href="#slide12">12</a></td>
         </tr>
         
