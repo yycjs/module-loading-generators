@@ -1,8 +1,24 @@
-# YYCjs Slide Template
+# Module loading and Generators
 
 ---
 
 ## Our Presenters
+
+## Sean Goresht
+
+* GitHub: [github.com/srsgores](https://github.com/srsgores), Twitter: [@SGoresht](https://twitter.com/SGoresht)
+
+## Neal Sanche
+
+* GitHub: [github.com/thorinside](https://github.com/thorinside), Twitter: [@thorinside](http://twitter.com/thorinside)
+
+## Olivier Wietrich
+
+* GitHub: [github.com/bredele](https://github.com/bredele), Twitter: [@bredeleca](http://twitter.com/bredeleca)
+
+---
+
+## Our Resident Presenters
 
 ## David Luecke
 
@@ -13,6 +29,7 @@
 * GitHub: [ekryski.github.com](http://ekryski.github.com), Twitter: [@ekryski](http://twitter.com/ekryski)
 
 ---
+
 
 ## Our Sponsors
 
@@ -34,14 +51,81 @@
 
 ---
 
-## Last Month
+## Last Month - [All about the tests](https://github.com/yycjs/javascript-testing)
 
-* Something awesome
-* More awesomeness
+- Some definitions
+- Writing testable code
+- TDD/BDD
+- Testing frameworks
+    - Mocha
+    - Jasmine
+    - QUnit
+- Integrating our tests into the build system
+- Continuous Integration with Travis CI
+- FuncUnit
+
+---
+
+# JavaScript modules
+
+---
+
+## Scope and namespacing
+
+D
+
+---
+
+## __A__synchronous __M__odule __D__efinition
+
+D
+
+---
+
+## RequireJS
+
+D
+
+---
+
+## CommonJS modules
+
+Used in Node
+
+E
+
+---
+
+## Browserify
+
+E
+
+---
+
+## Component
+
+O
+
+---
+
+## ECMAScript 6 modules
+
+E
+
+---
+
+# Generators
+
+---
+
+## Yeoman
+
+---
+
+## Mimosa
 
 ---
 
 ## Next Month
 
-* Something awesome
-* More awesomeness
+### SEO & i18n
