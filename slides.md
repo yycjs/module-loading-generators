@@ -191,6 +191,7 @@ Mimosa supports quite a few micro-templating libraries:
 
 Some of these are also supported for the server side as well.
 
+---
 
 ## Mimosa: Usage
 
@@ -210,11 +211,15 @@ Answer the questions, and an application will be scafolded for you.
 
 Write your code.
 
+---
+
 ## Mimosa: Unit Testing
 
 * Testem module has quite a few features.
 * Karma test runner support is available through a module.
 * jasmine-node module exists, and it will unit test the server side code.
+
+---
 
 ## Mimosa: Web Packaging
 
