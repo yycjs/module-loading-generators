@@ -127,9 +127,10 @@ E
 ### What is Mimosa? 
 
 - a surprisingly complete web application generator written for Node by [dbashford.github.com](https://dbashford.github.com) over the last nine months or so.
-- Good documentation to get started with at [mimosa.id](http://mimosa.io).
+- Good documentation to get started with at [mimosa.io](http://mimosa.io).
 - powerful and modular.
 - hides many of the details of web application development so you can get started quickly.
+- can hide a bit too much to do more complicated things easily.
 - easy to configure.
 - does not include any scaffolding, but does provide a facility to begin with pre-written skeletons.
 
