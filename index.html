@@ -88,7 +88,7 @@
             </aside>
             
             <aside class="page_number">
-              1/18
+              1/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -130,7 +130,7 @@
             </aside>
             
             <aside class="page_number">
-              2/18
+              2/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -168,7 +168,7 @@
             </aside>
             
             <aside class="page_number">
-              3/18
+              3/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -202,7 +202,7 @@
             </aside>
             
             <aside class="page_number">
-              4/18
+              4/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -234,7 +234,7 @@
             </aside>
             
             <aside class="page_number">
-              5/18
+              5/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -278,7 +278,7 @@
             </aside>
             
             <aside class="page_number">
-              6/18
+              6/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -307,7 +307,7 @@
             </aside>
             
             <aside class="page_number">
-              7/18
+              7/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -316,13 +316,31 @@
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>Scope and namespacing</h2></header>
+            <header><h2>Scope in JavaScript</h2></header>
             
             
-            <section><p>D</p></section>
+            <section><p><strong>JavaScript only knows function scope</strong></p>
+<div class="highlight"><pre><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="s1">&#39;testing&#39;</span><span class="p">;</span>
+
+    <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+    <span class="p">})(</span><span class="nx">i</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<p><strong>Global variables</strong></p>
+<div class="highlight"><pre><span class="kd">function</span> <span class="nx">test</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">local</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+    <span class="nx">global</span> <span class="o">=</span> <span class="s1">&#39;global&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">test</span><span class="p">();</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -338,7 +356,7 @@
             </aside>
             
             <aside class="page_number">
-              8/18
+              8/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -347,13 +365,133 @@
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Namespacing</h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="kd">var</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">init</span> <span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="cm">/* ... */</span>
+  <span class="p">},</span>
+  <span class="nx">Dummy</span> <span class="o">:</span> <span class="p">{</span>
+    <span class="nx">sayHi</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="s1">&#39;Hi &#39;</span> <span class="o">+</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">App</span><span class="p">.</span><span class="nx">Blog</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">getPosts</span> <span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">App</span><span class="p">.</span><span class="nx">Dummy</span><span class="p">.</span><span class="nx">sayHi</span><span class="p">(</span><span class="s1">&#39;David&#39;</span><span class="p">));</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/20
+            </aside>
+            <img class="logo" src="theme/img/yycjs-logo.png">
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Modules</h2></header>
+            
+            
+            <section><div class="highlight"><pre><span class="kd">var</span> <span class="nx">APP</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Do stuff</span>
+    <span class="kd">var</span> <span class="nx">privateVariable</span> <span class="o">=</span> <span class="s1">&#39;Hello &#39;</span><span class="p">,</span>
+        <span class="nx">sayHi</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">privateVariable</span> <span class="o">+</span> <span class="nx">name</span><span class="p">;</span>
+        <span class="p">};</span>
+    <span class="c1">// Return API</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">init</span> <span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">},</span>
+        <span class="nx">hi</span> <span class="o">:</span> <span class="nx">sayHi</span>
+    <span class="p">}</span>
+<span class="p">})();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">APP</span><span class="p">.</span><span class="nx">sayHi</span><span class="p">(</span><span class="s1">&#39;David&#39;</span><span class="p">));</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/20
+            </aside>
+            <img class="logo" src="theme/img/yycjs-logo.png">
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h2><strong>A</strong>synchronous <strong>M</strong>odule <strong>D</strong>efinition</h2></header>
             
             
-            <section><p>D</p></section>
+            <section><p><strong>AMD</strong>: <a href="http://www.commonjs.org/">CommonJS</a> specification for
+<a href="https://github.com/amdjs/amdjs-api/wiki/AMD">asynchronously loading dependencies</a>.</p>
+<div class="highlight"><pre><span class="c1">// say_hi.js</span>
+<span class="nx">define</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">privateVariable</span> <span class="o">=</span> <span class="s1">&#39;Hello &#39;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">sayHi</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">privateVariable</span> <span class="o">+</span> <span class="nx">name</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// module.js</span>
+<span class="nx">define</span><span class="p">([</span><span class="s1">&#39;say_hi.js&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">hisayer</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">result</span> <span class="o">:</span> <span class="nx">hisayer</span><span class="p">.</span><span class="nx">sayHi</span><span class="p">(</span><span class="s1">&#39;David&#39;</span><span class="p">),</span>
+        <span class="nx">sayHi</span> <span class="o">:</span> <span class="nx">hisayer</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// app.js</span>
+<span class="kd">var</span> <span class="nx">module</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;module.js&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">module</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">module</span><span class="p">.</span><span class="nx">sayHi</span><span class="p">(</span><span class="s1">&#39;You&#39;</span><span class="p">);</span> <span class="c1">// Hello You</span>
+    <span class="nx">module</span><span class="p">.</span><span class="nx">result</span><span class="p">;</span> <span class="c1">// -&gt; Hello David</span>
+<span class="p">});</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -369,7 +507,7 @@
             </aside>
             
             <aside class="page_number">
-              9/18
+              11/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -400,7 +538,7 @@
             </aside>
             
             <aside class="page_number">
-              10/18
+              12/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -432,7 +570,7 @@
             </aside>
             
             <aside class="page_number">
-              11/18
+              13/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -463,7 +601,7 @@
             </aside>
             
             <aside class="page_number">
-              12/18
+              14/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -494,7 +632,7 @@
             </aside>
             
             <aside class="page_number">
-              13/18
+              15/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -525,7 +663,7 @@
             </aside>
             
             <aside class="page_number">
-              14/18
+              16/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -554,7 +692,7 @@
             </aside>
             
             <aside class="page_number">
-              15/18
+              17/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -583,7 +721,7 @@
             </aside>
             
             <aside class="page_number">
-              16/18
+              18/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -612,7 +750,7 @@
             </aside>
             
             <aside class="page_number">
-              17/18
+              19/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -643,7 +781,7 @@
             </aside>
             
             <aside class="page_number">
-              18/18
+              20/20
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -698,61 +836,71 @@
       
         
         <tr id="toc-row-8" class="sub">
-          <th><a href="#slide8">Scope and namespacing</a></th>
+          <th><a href="#slide8">Scope in JavaScript</a></th>
           <td><a href="#slide8">8</a></td>
         </tr>
         
         <tr id="toc-row-9" class="sub">
-          <th><a href="#slide9"><strong>A</strong>synchronous <strong>M</strong>odule <strong>D</strong>efinition</a></th>
+          <th><a href="#slide9">Namespacing</a></th>
           <td><a href="#slide9">9</a></td>
         </tr>
         
         <tr id="toc-row-10" class="sub">
-          <th><a href="#slide10">RequireJS</a></th>
+          <th><a href="#slide10">Modules</a></th>
           <td><a href="#slide10">10</a></td>
         </tr>
         
         <tr id="toc-row-11" class="sub">
-          <th><a href="#slide11">CommonJS modules</a></th>
+          <th><a href="#slide11"><strong>A</strong>synchronous <strong>M</strong>odule <strong>D</strong>efinition</a></th>
           <td><a href="#slide11">11</a></td>
         </tr>
         
         <tr id="toc-row-12" class="sub">
-          <th><a href="#slide12">Browserify</a></th>
+          <th><a href="#slide12">RequireJS</a></th>
           <td><a href="#slide12">12</a></td>
         </tr>
         
         <tr id="toc-row-13" class="sub">
-          <th><a href="#slide13">Component</a></th>
+          <th><a href="#slide13">CommonJS modules</a></th>
           <td><a href="#slide13">13</a></td>
         </tr>
         
         <tr id="toc-row-14" class="sub">
-          <th><a href="#slide14">ECMAScript 6 modules</a></th>
+          <th><a href="#slide14">Browserify</a></th>
           <td><a href="#slide14">14</a></td>
         </tr>
         
-      
-      
-      <tr id="toc-row-15">
-        <th><a href="#slide15">Generators</a></th>
-        <td><a href="#slide15">15</a></td>
-      </tr>
-      
+        <tr id="toc-row-15" class="sub">
+          <th><a href="#slide15">Component</a></th>
+          <td><a href="#slide15">15</a></td>
+        </tr>
         
         <tr id="toc-row-16" class="sub">
-          <th><a href="#slide16">Yeoman</a></th>
+          <th><a href="#slide16">ECMAScript 6 modules</a></th>
           <td><a href="#slide16">16</a></td>
         </tr>
         
-        <tr id="toc-row-17" class="sub">
-          <th><a href="#slide17">Mimosa</a></th>
-          <td><a href="#slide17">17</a></td>
-        </tr>
+      
+      
+      <tr id="toc-row-17">
+        <th><a href="#slide17">Generators</a></th>
+        <td><a href="#slide17">17</a></td>
+      </tr>
+      
         
         <tr id="toc-row-18" class="sub">
-          <th><a href="#slide18">Next Month</a></th>
+          <th><a href="#slide18">Yeoman</a></th>
           <td><a href="#slide18">18</a></td>
+        </tr>
+        
+        <tr id="toc-row-19" class="sub">
+          <th><a href="#slide19">Mimosa</a></th>
+          <td><a href="#slide19">19</a></td>
+        </tr>
+        
+        <tr id="toc-row-20" class="sub">
+          <th><a href="#slide20">Next Month</a></th>
+          <td><a href="#slide20">20</a></td>
         </tr>
         
       

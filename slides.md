@@ -70,15 +70,102 @@
 
 ---
 
-## Scope and namespacing
+## Scope in JavaScript
 
-D
+__JavaScript only knows function scope__
+
+	!javascript
+	for(var i = 0; i < 10; i++) {
+		var x = 'testing';
+
+		(function(arg) {
+			var y = 42;
+		})(i);
+	}
+
+__Global variables__
+
+	!javascript
+	function test() {
+		var local = 42;
+		global = 'global';
+	}
+
+	test();
+
+---
+
+## Namespacing
+
+    !javascript
+    var App = {
+      init : function() {
+        /* ... */
+      },
+      Dummy : {
+        sayHi : function(name) {
+          return 'Hi ' + name;
+        }
+      }
+    }
+
+    App.Blog = {
+      getPosts : function() { /* ... */ }
+    }
+
+    console.log(App.Dummy.sayHi('David'));
+
+---
+
+## Modules
+
+	!javascript
+	var APP = (function() {
+		// Do stuff
+		var privateVariable = 'Hello ',
+			sayHi = function(name) {
+				return privateVariable + name;
+			};
+		// Return API
+		return {
+			init : function() { /* ... */ },
+			hi : sayHi
+		}
+	})();
+
+	console.log(APP.sayHi('David'));
 
 ---
 
 ## __A__synchronous __M__odule __D__efinition
 
-D
+__AMD__: [CommonJS](http://www.commonjs.org/) specification for
+[asynchronously loading dependencies](https://github.com/amdjs/amdjs-api/wiki/AMD).
+
+	!javascript
+	// say_hi.js
+	define(function() {
+		var privateVariable = 'Hello ';
+		return {
+			sayHi : function(name) {
+                return privateVariable + name;
+            }
+		}
+	});
+
+	// module.js
+	define(['say_hi.js'], function(hisayer) {
+		return {
+			result : hisayer.sayHi('David'),
+			sayHi : hisayer
+		}
+	});
+
+	// app.js
+	var module = require('module.js', function(module) {
+		module.sayHi('You'); // Hello You
+		module.result; // -> Hello David
+	});
 
 ---
 
