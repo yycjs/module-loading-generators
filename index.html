@@ -80,7 +80,7 @@
             </aside>
             
             <aside class="page_number">
-              1/20
+              1/19
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -122,7 +122,7 @@
             </aside>
             
             <aside class="page_number">
-              2/20
+              2/19
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -160,7 +160,7 @@
             </aside>
             
             <aside class="page_number">
-              3/20
+              3/19
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -194,7 +194,7 @@
             </aside>
             
             <aside class="page_number">
-              4/20
+              4/19
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -226,7 +226,7 @@
             </aside>
             
             <aside class="page_number">
-              5/20
+              5/19
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -270,7 +270,7 @@
             </aside>
             
             <aside class="page_number">
-              6/20
+              6/19
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -299,7 +299,7 @@
             </aside>
             
             <aside class="page_number">
-              7/20
+              7/19
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -350,7 +350,7 @@
             </aside>
             
             <aside class="page_number">
-              8/20
+              8/19
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -398,7 +398,7 @@
             </aside>
             
             <aside class="page_number">
-              9/20
+              9/19
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -444,7 +444,7 @@
             </aside>
             
             <aside class="page_number">
-              10/20
+              10/19
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -472,7 +472,7 @@
 <span class="p">});</span>
 
 <span class="c1">// module.js</span>
-<span class="nx">define</span><span class="p">([</span><span class="s1">&#39;say_hi.js&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">hisayer</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">define</span><span class="p">([</span><span class="s1">&#39;./say_hi&#39;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">hisayer</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">{</span>
         <span class="nx">result</span> <span class="o">:</span> <span class="nx">hisayer</span><span class="p">.</span><span class="nx">sayHi</span><span class="p">(</span><span class="s1">&#39;David&#39;</span><span class="p">),</span>
         <span class="nx">sayHi</span> <span class="o">:</span> <span class="nx">hisayer</span>
@@ -480,7 +480,7 @@
 <span class="p">});</span>
 
 <span class="c1">// app.js</span>
-<span class="kd">var</span> <span class="nx">module</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;module.js&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">module</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">var</span> <span class="nx">module</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./module&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">module</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">module</span><span class="p">.</span><span class="nx">sayHi</span><span class="p">(</span><span class="s1">&#39;You&#39;</span><span class="p">);</span> <span class="c1">// Hello You</span>
     <span class="nx">module</span><span class="p">.</span><span class="nx">result</span><span class="p">;</span> <span class="c1">// -&gt; Hello David</span>
 <span class="p">});</span>
@@ -501,7 +501,7 @@
             </aside>
             
             <aside class="page_number">
-              11/20
+              11/19
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -556,7 +556,7 @@
             </aside>
             
             <aside class="page_number">
-              12/20
+              12/19
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -565,14 +565,36 @@
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
             <header><h2>CommonJS modules</h2></header>
             
             
-            <section><p>Used in Node</p>
-<p>E</p></section>
+            <section><p><a href="http://wiki.commonjs.org/wiki/Modules/1.1">CommonJS specification</a> for loading modules in JavaScript.
+Used by NodeJS. Provides <code>module</code>, <code>exports</code> and <code>require</code>.</p>
+<div class="highlight"><pre><span class="c1">// say_hi.js</span>
+<span class="kd">var</span> <span class="nx">privateVariable</span> <span class="o">=</span> <span class="s1">&#39;Hello &#39;</span><span class="p">;</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">sayHi</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">privateVariable</span> <span class="o">+</span> <span class="nx">name</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// module.js</span>
+<span class="kd">var</span> <span class="nx">hisayer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;say_hi&#39;</span><span class="p">);</span>
+
+<span class="nx">exports</span><span class="p">.</span><span class="nx">result</span> <span class="o">=</span> <span class="nx">hisayer</span><span class="p">.</span><span class="nx">sayHi</span><span class="p">(</span><span class="s1">&#39;David&#39;</span><span class="p">);</span>
+<span class="nx">exports</span><span class="p">.</span><span class="nx">sayHi</span> <span class="o">=</span> <span class="nx">hisayer</span>
+
+<span class="c1">// app.js</span>
+<span class="kd">var</span> <span class="nx">mod</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./module&#39;</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">sayHi</span><span class="p">(</span><span class="s1">&#39;You&#39;</span><span class="p">);</span> <span class="c1">// Hello You</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">result</span><span class="p">;</span> <span class="c1">// -&gt; Hello David</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -588,7 +610,7 @@
             </aside>
             
             <aside class="page_number">
-              13/20
+              13/19
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -603,7 +625,12 @@
             <header><h2>Browserify</h2></header>
             
             
-            <section><p>E</p></section>
+            <section><h3><code>require('modules')</code> in the browser.</h3>
+<p>Lets you write NodeJS style modules for the browser.</p>
+<pre><code>npm install gamma
+browserify main.js -o bundle.js
+</code></pre>
+<p><img alt="Browserify Logo" src="images/browserify.png" /></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -619,38 +646,7 @@
             </aside>
             
             <aside class="page_number">
-              14/20
-            </aside>
-            <img class="logo" src="theme/img/yycjs-logo.png">
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: slides.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h2>Component</h2></header>
-            
-            
-            <section><p>O</p></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="slides.md">slides.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              15/20
+              14/19
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -696,7 +692,7 @@ will support loading modules:</p>
             </aside>
             
             <aside class="page_number">
-              16/20
+              15/19
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -725,7 +721,7 @@ will support loading modules:</p>
             </aside>
             
             <aside class="page_number">
-              17/20
+              16/19
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -759,7 +755,7 @@ will support loading modules:</p>
             </aside>
             
             <aside class="page_number">
-              18/20
+              17/19
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -792,7 +788,7 @@ will support loading modules:</p>
             </aside>
             
             <aside class="page_number">
-              19/20
+              18/19
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -838,7 +834,7 @@ will support loading modules:</p>
             </aside>
             
             <aside class="page_number">
-              20/20
+              19/19
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -928,36 +924,31 @@ will support loading modules:</p>
         </tr>
         
         <tr id="toc-row-15" class="sub">
-          <th><a href="#slide15">Component</a></th>
+          <th><a href="#slide15">ECMAScript 6 modules</a></th>
           <td><a href="#slide15">15</a></td>
         </tr>
         
-        <tr id="toc-row-16" class="sub">
-          <th><a href="#slide16">ECMAScript 6 modules</a></th>
-          <td><a href="#slide16">16</a></td>
-        </tr>
-        
       
       
-      <tr id="toc-row-17">
-        <th><a href="#slide17">Generators</a></th>
-        <td><a href="#slide17">17</a></td>
+      <tr id="toc-row-16">
+        <th><a href="#slide16">Generators</a></th>
+        <td><a href="#slide16">16</a></td>
       </tr>
       
         
+        <tr id="toc-row-17" class="sub">
+          <th><a href="#slide17"><a href="http://yeoman.io/">Yeoman</a></a></th>
+          <td><a href="#slide17">17</a></td>
+        </tr>
+        
         <tr id="toc-row-18" class="sub">
-          <th><a href="#slide18"><a href="http://yeoman.io/">Yeoman</a></a></th>
+          <th><a href="#slide18"><a href="http://mimosa.io/">Mimosa</a></a></th>
           <td><a href="#slide18">18</a></td>
         </tr>
         
         <tr id="toc-row-19" class="sub">
-          <th><a href="#slide19"><a href="http://mimosa.io/">Mimosa</a></a></th>
+          <th><a href="#slide19"><a href="http://www.meetup.com/YYC-js/events/131079442/">Next Month</a></a></th>
           <td><a href="#slide19">19</a></td>
-        </tr>
-        
-        <tr id="toc-row-20" class="sub">
-          <th><a href="#slide20"><a href="http://www.meetup.com/YYC-js/events/131079442/">Next Month</a></a></th>
-          <td><a href="#slide20">20</a></td>
         </tr>
         
       

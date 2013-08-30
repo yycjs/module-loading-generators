@@ -156,7 +156,7 @@ __AMD__: Specification for
 	});
 
 	// module.js
-	define(['say_hi.js'], function(hisayer) {
+	define(['./say_hi'], function(hisayer) {
 		return {
 			result : hisayer.sayHi('David'),
 			sayHi : hisayer
@@ -164,7 +164,7 @@ __AMD__: Specification for
 	});
 
 	// app.js
-	var module = require('module.js', function(module) {
+	var module = require('./module', function(module) {
 		module.sayHi('You'); // Hello You
 		module.result; // -> Hello David
 	});
@@ -204,21 +204,43 @@ Modules:
 
 ## CommonJS modules
 
-Used in Node
+[CommonJS specification](http://wiki.commonjs.org/wiki/Modules/1.1) for loading modules in JavaScript.
+Used by NodeJS. Provides `module`, `exports` and `require`.
 
-E
+    !javascript
+    // say_hi.js
+    var privateVariable = 'Hello ';
+
+    module.exports = {
+      sayHi : function(name) {
+        return privateVariable + name;
+      }
+    }
+
+    // module.js
+    var hisayer = require('say_hi');
+
+    exports.result = hisayer.sayHi('David');
+    exports.sayHi = hisayer
+
+    // app.js
+    var mod = require('./module');
+
+    module.sayHi('You'); // Hello You
+    module.result; // -> Hello David
 
 ---
 
 ## Browserify
 
-E
+### `require('modules')` in the browser.
 
----
+Lets you write NodeJS style modules for the browser.
 
-## Component
+    npm install gamma
+    browserify main.js -o bundle.js
 
-O
+![Browserify Logo](images/browserify.png)
 
 ---
 
