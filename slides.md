@@ -280,6 +280,17 @@ This is still under heavy discussion.
 
 Brought to you by [Sean Goresht](http://seangoresht.com/)
 
+---
+
+## [Mimosa](http://mimosa.io/)
+
+### A modern browser development toolkit
+
+![Mimosa Logo](images/mimosa-hat.png)
+
+Brought to you by [Neal Sanche](https://github.com/thorinside)
+
+---
 
 ### What is Mimosa? 
 
@@ -383,16 +394,6 @@ Write your code.
 * Use the *web-package* module to create a server that can be deployed to *heroku*.
 * add 'web-package' to the modules list.
 * run 'make pack' or 'mimosa build -p'
-
----
-
-## [Mimosa](http://mimosa.io/)
-
-### A modern browser development toolkit
-
-![Mimosa Logo](images/mimosa-hat.png)
-
-Brought to you by [Neal Sanche](https://github.com/thorinside)
 
 ---
 
